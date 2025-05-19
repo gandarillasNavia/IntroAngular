@@ -5,12 +5,14 @@ import { ContactanosComponent } from './paginas/contactanos/contactanos.componen
 import { TiendaComponent } from './paginas/tienda/tienda.component';
 import { NosotrosComponent } from './paginas/nosotros/nosotros.component';
 import { PaginaNoEncontradaComponent } from './paginas/pagina-no-encontrada/pagina-no-encontrada.component';
+import { DetallesComponent } from './paginas/detalles/detalles.component';
 
 export const routes: Routes = [
     {path: 'inicio', component: InicioComponent},
     {path: 'tienda', component: TiendaComponent},
     {path: 'nosotros', component: NosotrosComponent},
     {path: 'contactanos', component: ContactanosComponent},
+    {path: 'detalles/:id', component: DetallesComponent},
     {path: '', redirectTo:'inicio', pathMatch: 'full'},
     {path: '**', component: PaginaNoEncontradaComponent}
 ];
