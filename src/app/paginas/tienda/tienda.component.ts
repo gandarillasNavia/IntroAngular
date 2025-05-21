@@ -12,8 +12,13 @@ import { ProductoService } from '../../servicios/producto.service';
 export class TiendaComponent {
   listaDeProductos: Product[] = [];
   productoService: ProductoService = inject(ProductoService); 
+  
   constructor(){
-    this.listaDeProductos =  this.productoService.obtenerTodosLosProductos();
+    this.productoService.obtenerTodosLosProductos().subscribe(
+      data => this.listaDeProductos = data,
+      error => console.error(error),
+      () => console.log('FIN')
+    )
   }
 
 
